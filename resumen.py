@@ -1,12 +1,12 @@
 from openai import OpenAI
-from config import OPENAI_API_KEY
+import streamlit as st
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
 
 
 def resumir_sentencia(texto):
     try:
-        respuesta = client.chat.completions.create(
+        respuesta = OpenAI.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
                 {

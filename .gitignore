@@ -1,0 +1,5 @@
+.env
+descargas_pdf
+venv
+__pycache__
+config.py

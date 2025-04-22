@@ -18,8 +18,8 @@ def extraer_texto_pdf(ruta_pdf):
     return texto_completo.strip()
 
 
-from extractor import extraer_texto_pdf
+# from extractor import extraer_texto_pdf
 
-texto = extraer_texto_pdf("descargas_pdf/_ 1178589.pdf")
-print("TEXTO EXTRAIDO")
-print(texto[:1000])  # Imprime los primeros 1000 caracteres del texto extraído
+# texto = extraer_texto_pdf("descargas_pdf/_ 1178589.pdf")
+# print("TEXTO EXTRAIDO")
+# print(texto[:1000])  # Imprime los primeros 1000 caracteres del texto extraído

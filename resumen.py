@@ -1,7 +1,20 @@
-from openai import OpenAI
 import streamlit as st
+from azure.ai.inference import ChatCompletionsClient
+from azure.ai.inference.models import SystemMessage, UserMessage
+from azure.core.credentials import AzureKeyCredential
 
-OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
+# Configuración del endpoint y modelo
+ENDPOINT = "https://models.github.ai/inference"
+MODEL = "openai/gpt-4.1"
+
+# Token GitHub desde secrets
+TOKEN = st.secrets["GITHUB_TOKEN"]
+
+# Cliente de Azure AI Inference
+client = ChatCompletionsClient(
+    endpoint=ENDPOINT,
+    credential=AzureKeyCredential(TOKEN),
+)
 
 
 def resumir_sentencia(texto):
